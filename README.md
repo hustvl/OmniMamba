@@ -11,7 +11,7 @@ via State Space Models</h3>
 (<sup>📧</sup>) corresponding author.
 
 
-[![arxiv paper](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/abs/xxxx)
+[![arxiv paper](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/abs/2503.08686)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 </div>
@@ -22,7 +22,7 @@ via State Space Models</h3>
 
 ## 📋 News
 
-`[2025-3-1x]:` OmniMamba [arXiv](https://arxiv.org/abs/xxxx) paper released. Code and Weight are coming soon. Please stay tuned! ☕️
+`[2025-3-1x]:` OmniMamba [arXiv](https://arxiv.org/abs/2503.08686) paper released. Code and Weight are coming soon. Please stay tuned! ☕️
 
 ## ✨ Highlights
 * To the best of our knowledge, OmniMamba is the first linear model based unified multimodal understanding and visual generation model.
@@ -49,13 +49,13 @@ If you find OmniMamba useful in your research or applications, please consider g
 
 
 ```bibtex
-@article{zou2025omnimamba,
+@misc{zou2025omnimambaefficientunifiedmultimodal,
       title={OmniMamba: Efficient and Unified Multimodal Understanding and Generation via State Space Models}, 
       author={Jialv Zou and Bencheng Liao and Qian Zhang and Wenyu Liu and Xinggang Wang},
       year={2025},
-      eprint={xxxx},
+      eprint={2503.08686},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/xxxx}, 
+      url={https://arxiv.org/abs/2503.08686}, 
 }
 ```
