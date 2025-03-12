@@ -22,7 +22,7 @@ via State Space Models</h3>
 
 ## 📋 News
 
-`[2025-3-1x]:` OmniMamba [arXiv](https://arxiv.org/abs/2503.08686) paper released. Code and Weight are coming soon. Please stay tuned! ☕️
+`[2025-3-12]:` OmniMamba [arXiv](https://arxiv.org/abs/2503.08686) paper released. Code and Weight are coming soon. Please stay tuned! ☕️
 
 ## ✨ Highlights
 * To the best of our knowledge, OmniMamba is the first linear model based unified multimodal understanding and visual generation model.
