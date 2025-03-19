@@ -1,0 +1,28 @@
+# config.yaml
+accelerate:
+  mixed_precision: bf16
+  machine_rank: 0
+  num_processes: 8
+  num_machines: 1
+  main_process_port: 8888
+
+train:
+  omnimamba_model: OmniMamba-1.3B
+  image_backbone: dinosiglip-vit-so-384px
+  dataset: datasets/pretokenized_coco_train2014.jsonl
+  vq_ckpt: null
+  t2i_task: True
+  mmu_task: False
+  omnimamba_ckpt: null
+  mamba_pretrain: ckpts/mamba2_1.3b/pytorch_model.bin
+  batch_size_t2i: 90
+  batch_size_mmu: 0
+  lr: 8e-4
+  stage: align
+  max_steps: 100000
+  warmup_steps: 1000
+  resume_dir: null
+  output_dir: logs/
+  logging_steps: 500
+  bf16: True
+

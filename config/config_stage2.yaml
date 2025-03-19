@@ -1,0 +1,27 @@
+# config.yaml
+accelerate:
+  mixed_precision: bf16
+  machine_rank: 0
+  num_processes: 8
+  num_machines: 1
+  main_process_port: 8888
+
+train:
+  omnimamba_model: OmniMamba-1.3B
+  image_backbone: dinosiglip-vit-so-384px
+  dataset: datasets/pretokenized_coco_train2014.jsonl
+  stage: finetune
+  vq_ckpt: null
+  t2i_task: True
+  mmu_task: True
+  omnimamba_ckpt: null
+  mamba_pretrain: null
+  batch_size_t2i: 48
+  batch_size_mmu: 3
+  lr: 1e-4
+  max_steps: 150000
+  warmup_steps: 0
+  resume_dir: null
+  output_dir: logs/
+  logging_steps: 500
+  bf16: True
