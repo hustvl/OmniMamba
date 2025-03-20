@@ -77,7 +77,7 @@ wandb login
 ```
 
 ### Inference
-Please download our pretrained model at [OmniMamba-1.3b](https://huggingface.co/Doctor-James/OmniMamba)
+Please download our pretrained model at [OmniMamba-1.3b](https://huggingface.co/hustvl/OmniMamba)
 
 Multimodal Understanding
 ```
@@ -95,7 +95,7 @@ LVIS-Instruct-4V: Please refer to the [document](https://huggingface.co/datasets
 
 LRV-Instruct: Please refer to the [document](https://github.com/FuxiaoLiu/LRV-Instruction)
 
-You can download our preprocessed JSON file on [Hugging Face](https://huggingface.co/Doctor-James/OmniMamba).
+You can download our preprocessed JSON file on [Hugging Face](https://huggingface.co/hustvl/OmniMamba).
 
 Folder structure
 ```
