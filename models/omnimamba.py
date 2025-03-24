@@ -12,9 +12,10 @@ from __future__ import annotations
 
 from typing import Optional, Type
 
+from huggingface_hub import PyTorchModelHubMixin
+
 import torch
 from torch import nn
-import random
 from models.cobra.backbones.llm.prompting import PromptBuilder
 from models.cobra.overwatch import initialize_overwatch
 from models.cobra.nn_utils import FusedMLPProjector, LinearProjector, MLPProjector, FusedLDPProjector
@@ -39,7 +40,12 @@ def print_trainable_parameters(model):
             print(f"  {name}: {param.numel()}")
 
 
-class OmniMamba(nn.Module):
+class OmniMamba(nn.Module,
+                PyTorchModelHubMixin,
+                repo_url="https://github.com/hustvl/OmniMamba",
+                paper_url="https://arxiv.org/abs/2407.11015",
+                pipeline_tag="any-to-any",
+                license="mit"):
     def __init__(
         self,
         args,
