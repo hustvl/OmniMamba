@@ -51,6 +51,7 @@ class MambaVLM(nn.Module, PyTorchModelHubMixin):
     #llamagen_t2i
     def init_1st_stage_model(self):
         vq_model = llamagen_VQ_models['VQ-16']()
+        # Download at https://huggingface.co/peizesun/llamagen_t2i
         checkpoint = torch.load('ckpts/llamagen/vq_ds16_t2i.pt', map_location="cpu")
         vq_model.load_state_dict(checkpoint["model"])
         vq_model.eval()

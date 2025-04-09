@@ -23,12 +23,6 @@ DINOSigLIP_VISION_BACKBONES = {
         "siglip": "vit_so400m_patch14_siglip_384",
     },
 }
-# DINOSigLIP_VISION_BACKBONES = {
-#     "dinosiglip-vit-so-384px": {
-#         "dino": "ckpts/dinov2/",
-#         "siglip": "ckpts/SigLIP/",
-#     },
-# }
 
 @dataclass
 class DinoSigLIPImageTransform:
@@ -47,14 +41,14 @@ class DinoSigLIPViTBackbone(VisionBackbone):
         self.siglip_timm_path_or_url = DINOSigLIP_VISION_BACKBONES[vision_backbone_id]["siglip"]
 
         self.siglip_featurizer: VisionTransformer = timm.create_model(
-            self.siglip_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size, pretrained_cfg_overlay=dict(file="ckpts/SigLIP/open_clip_pytorch_model.bin")
+            self.siglip_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size
         )
 
         self.siglip_featurizer.eval()
 
 
         self.dino_featurizer: VisionTransformer = timm.create_model(
-            self.dino_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size, pretrained_cfg_overlay=dict(file="ckpts/dinov2/pytorch_model.bin")
+            self.dino_timm_path_or_url, pretrained=True, num_classes=0, img_size=self.default_image_size
         )
         self.dino_featurizer.eval()
 
