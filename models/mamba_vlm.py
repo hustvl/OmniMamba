@@ -24,7 +24,11 @@ class MambaVLM(nn.Module, PyTorchModelHubMixin):
         self.num_tokens = config.num_tokens
         self.pad_vocab_size_multiple = config.pad_vocab_size_multiple
 
-        self.tokenizer = AutoTokenizer.from_pretrained('ckpts/gpt-neox-20b/', model_max_length=2048)
+        # self.tokenizer = AutoTokenizer.from_pretrained('ckpts/gpt-neox-20b/', model_max_length=2048)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            'EleutherAI/gpt-neox-20b',
+            model_max_length=2048
+        )
         self.uni_prompting = UniversalPrompting(self.tokenizer, max_text_len=499,
                                         special_tokens=(
                                             "<|soi|>", "<|eoi|>", "<|sot|>", "<|eot|>", "<|t2i|>",
@@ -52,7 +56,13 @@ class MambaVLM(nn.Module, PyTorchModelHubMixin):
     def init_1st_stage_model(self):
         vq_model = llamagen_VQ_models['VQ-16']()
         # Download at https://huggingface.co/peizesun/llamagen_t2i
-        checkpoint = torch.load('ckpts/llamagen/vq_ds16_t2i.pt', map_location="cpu")
+        # checkpoint = torch.load('ckpts/llamagen/vq_ds16_t2i.pt', map_location="cpu")
+        checkpoint_path = hf_hub_download(
+            repo_id="peizesun/llamagen_t2i",
+            filename="vq_ds16_t2i.pt",
+            revision="main"  # optional: specify branch/tag
+        )
+        checkpoint = torch.load(checkpoint_path, map_location="cpu")
         vq_model.load_state_dict(checkpoint["model"])
         vq_model.eval()
         [p.requires_grad_(False) for p in vq_model.parameters()]
