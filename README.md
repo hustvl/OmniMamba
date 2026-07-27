@@ -150,13 +150,12 @@ If you find OmniMamba useful in your research or applications, please consider g
 
 
 ```bibtex
-@misc{zou2025omnimambaefficientunifiedmultimodal,
-      title={OmniMamba: Efficient and Unified Multimodal Understanding and Generation via State Space Models}, 
-      author={Jialv Zou and Bencheng Liao and Qian Zhang and Wenyu Liu and Xinggang Wang},
-      year={2025},
-      eprint={2503.08686},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.08686}, 
+@inproceedings{zou2026omnimamba,
+  title={OmniMamba: Efficient and Unified Multimodal Understanding and Generation via State Space Models},
+  author={Jialv Zou and Bencheng Liao and Qian Zhang and Wenyu Liu and Xinggang Wang},
+  booktitle={Computer Vision -- ECCV 2026},
+  year={2026},
+  note={arXiv:2503.08686},
+  url={https://arxiv.org/abs/2503.08686}
 }
 ```
